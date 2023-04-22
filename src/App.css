@@ -1,133 +1,44 @@
 * {
    box-sizing: border-box;
-   font-family: 'Karla', sans-serif;
+   font-family: 'Quicksand', sans-serif;
 }
 
 body {
    margin: 0;
-   background-color: #0B2434;
+   background-color: #07051b;
 }
 
 main {
-   width: 520px;
-   height: 390px;
-   margin-left: 20px;
+   width: 400px;
+   height: 600px;
+   margin-left: 30px;
    margin-top: 30px;
    background-color: white;
 
-   border-radius: 10px;
-
-   display: flex;
-}
-
-.game {
-   width: 320px;
-}
-
-.highscores {
-   width: 200px;
-   display: flex;
-   justify-content: center;
-}
-
-.stats {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
-.stats > h3 {
-   margin-bottom: 0px;
-}
-
-.list {
-   display: flex;
-   flex-direction: column;
-   max-height: 310px;
-   overflow: hidden;
-}
-
-.score-item {
-   margin: 6px;
-}
-
-.divition {
-   width: 150px;
+   border-radius: 20px;
 }
 
 .title {
-   margin-bottom: 0px;
+   font-size: 25px;
+   text-align: center;
+   height: 30px;
 }
 
-.info {
+.container {
    display: flex;
    flex-direction: column;
-   align-items: center;
-}
-
-.instructions {
-   margin: 0px;
-   font-size: 13px;
-   width: 243px;
-   text-align: center;
 }
 
 .game {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-}
-
-.roll {
-   box-shadow: 0px 2px 4px black;
-   
-   background-color: #5035FF;
-   color: #FFFFFF;
-
-   width: 90px;
-   height: 35px;
-   border-radius: 5px;
-}
-
-.dice {
-   padding: 40px;
-
-   display: flex;
-   flex-wrap: wrap;
-   gap: 15px;
-}
-
-.die {
-   box-shadow: 0px 2px 4px black;
-
-   width: 35px;
-   height: 35px;
-
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-   border-radius: 10px;
-}
-
-.held {
-   background-color: #59E391 !important;
+   background-color: gray;
+   height: 400px;
 }
 
 .scores {
+   background-color: lightgray;
+   height: 140px;
+   margin-bottom: 30px;
+
    display: flex;
-   flex-direction: column;
    justify-content: center;
-   align-items: center;
-   gap: 0;
-}
-
-.score {
-   margin-top: 10;
-   margin-bottom: 0;
-}
-
-.time {
-   margin-top: 5px;
-   margin-bottom: 0;
 }
