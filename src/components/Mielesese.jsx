@@ -1,5 +1,5 @@
 import React from "react"
-import MielesesePNG from "./../../public/mielesese.png"
+import MielesesePNG from "./../img/mielesese.png"
 
 export default function Mielesese(props)
 {

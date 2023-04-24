@@ -39,12 +39,12 @@ main {
 }
 
 .game {
-   background-image: url("./../../public/background.png");
+   background-image: url("./img/background.png");
    height: 400px;
 }
 
 .input-menu {
-   background-image: url("./../../public/input_background.png");
+   background-image: url("./img/input_background.png");
    height: 140px;
 
    display: flex;
