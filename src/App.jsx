@@ -5,7 +5,7 @@ import Confetti from 'react-confetti';
 
 function App()
 {
-   const lastLevel = 3;
+   const lastLevel = 10;
 
    const [subtitle, setSubtitle] = useState("Press the button to begin!!");
 
