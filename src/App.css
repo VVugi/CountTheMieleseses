@@ -13,9 +13,10 @@ main {
    height: 600px;
    margin-left: 30px;
    margin-top: 30px;
-   background-color: white;
+   background-color: #ebff6a;
 
    border-radius: 20px;
+   overflow: hidden;
 }
 
 .title {
@@ -24,21 +25,73 @@ main {
    height: 30px;
 }
 
+.subtitle {
+   font-size: 25px;
+   text-align: center;
+   height: 30px;
+}
+
 .container {
    display: flex;
    flex-direction: column;
+
+   height: 540px;
 }
 
 .game {
-   background-color: gray;
+   background-image: url("./../../public/background.png");
    height: 400px;
 }
 
-.scores {
-   background-color: lightgray;
+.input-menu {
+   background-image: url("./../../public/input_background.png");
    height: 140px;
-   margin-bottom: 30px;
 
    display: flex;
+   align-items: stretch;
    justify-content: center;
+}
+
+.mielesese {
+   position: relative;
+
+   animation: wobble 0.3s linear infinite;
+}
+
+@keyframes movement {
+   100% {
+      transform: translateX(950px);
+   }
+}
+
+@keyframes wobble {
+   0% {
+      transform: translateY(0px);
+   }
+
+   50% {
+      transform: translateY(-5px);
+   }
+   
+   100% {
+      transform: translateY(0px);
+   }
+}
+
+.start-button {
+   font-size: 30px;
+   border-radius: 30px;
+
+   margin: 15px;
+   width: 200px;
+}
+
+.number-input {
+   text-align: center;
+   font-size: 60px;
+   border-radius: 30px;
+   border-style: none;
+
+   margin: 15px;
+   width: 200px;
 }
