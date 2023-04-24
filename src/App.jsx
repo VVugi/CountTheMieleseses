@@ -10,6 +10,7 @@ function App()
    const [subtitle, setSubtitle] = useState("Press the button to begin!!");
 
    const [lost, setLost] = useState(false);
+   const [winner, setWinner] = useState(false);
    const [answer, setAnswer] = useState();
 
    const [analizeTime, setAnalizeTime] = useState(false);
@@ -33,11 +34,11 @@ function App()
          setLevel(1);
          setLost(false);
 
-         newAmount = Math.ceil(Math.random() * 10) + (4 * 1);
+         newAmount = Math.ceil(Math.random() * 6) + (3 * 1);
       }
       else
       {
-         newAmount = Math.ceil(Math.random() * 10) + (4 * level);
+         newAmount = Math.ceil(Math.random() * 6) + (3 * level);
       }
 
       console.log(newAmount);
@@ -131,6 +132,7 @@ function App()
             else if(level == lastLevel + 1)
             {
                setSubtitle("You did it!!!!!!!!");
+               setWinner(true);
             }
             else
             {
@@ -156,11 +158,11 @@ function App()
          </div>
 
          <div className="container">
-            <Confetti
+            {winner && <Confetti
                width={565}
                height={445}
                numberOfPieces={0}
-            />
+            />}
 
             <div className="game">
                {countingTime && spawnedMieleseses}
