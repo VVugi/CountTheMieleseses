@@ -1,6 +1,6 @@
 # CountTheMieleseses
 
-Random bird counting game.
+Random bird counting game inspired on my pet.
 
 ## First personal project to practice React/CSS.
 
