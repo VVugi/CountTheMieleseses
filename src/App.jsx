@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import Mielesese from "./components/Mielesese"
 import Confetti from 'react-confetti';
+import MielesesePNG from "./img/mielesese.png"
 
 function App()
 {
    const lastLevel = 10;
 
-   const [subtitle, setSubtitle] = useState("Press the button to begin!!");
+   const [subtitle, setSubtitle] = useState("Press the button to start!!");
 
    const [lost, setLost] = useState(false);
    const [winner, setWinner] = useState(false);
@@ -34,14 +35,13 @@ function App()
          setLevel(1);
          setLost(false);
 
-         newAmount = Math.ceil(Math.random() * 6) + (3 * 1);
+         newAmount = Math.ceil(Math.random() * 4) + (2 * 1);
       }
       else
       {
-         newAmount = Math.ceil(Math.random() * 6) + (3 * level);
+         newAmount = Math.ceil(Math.random() * 4) + (2 * level);
       }
 
-      console.log(newAmount);
       setAmount(newAmount);
       setSubtitle("Count the Mieleseses!!!!");
    }
@@ -77,11 +77,7 @@ function App()
             />
          ));
 
-         console.log("Empieza el nivel");
-
          interval1 = setInterval(function() {
-            console.log("Fin del nivel");
-
             clearInterval(interval1);
             setWritingTime(true);
             setSubtitle("Type in your answer!!");
@@ -94,8 +90,6 @@ function App()
    useEffect(() => {
       if(writingTime)
       {
-         console.log("Empieza hora de escribir");
-
          interval2 = setInterval(function() {
             setAnalizeTime(true);
 
@@ -109,14 +103,8 @@ function App()
    useEffect(() => {
       if(analizeTime)
       {
-         console.log("Termina hora de escribir");
-
          setWritingTime(false);
          setCountingTime(false);
-
-         console.log(amount + " MIELESESES");
-
-         console.log(answer + " == " + amount);
 
          if(answer != amount)
          {
@@ -159,9 +147,9 @@ function App()
 
          <div className="container">
             {winner && <Confetti
-               width={565}
-               height={445}
-               numberOfPieces={0}
+               width={460}
+               height={660}
+               numberOfPieces={69}
             />}
 
             <div className="game">
@@ -169,8 +157,13 @@ function App()
             </div>
 
             <div className="input-menu">
-               {(level <= lastLevel) && !countingTime && <input className="start-button" onClick={spawnMieleseses} type="button" value={lost ? "Restart" : level == 1 ? "Start" : "Start level " + level}></input>}
+               {(level <= lastLevel || lost) && !countingTime && <input className="start-button" onClick={spawnMieleseses} type="button" value={lost ? "Restart" : level == 1 ? "Start" : "Start level " + level}></input>}
                {!lost && writingTime && <input className="number-input" onChange={updateAnswer} type="number"></input>}
+               
+               {winner &&
+               <div className="dancing-mielesese-container">
+                  <img className="dancing-mielesese" src={MielesesePNG}></img>
+               </div>}
             </div>
          </div>
 
